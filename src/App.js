@@ -1,13 +1,6 @@
 import './App.css';
 import React from 'react';
 import Tooltip from './Tooltip';
-// function App() {
-//   return (
-//     <div className="App">
-
-//     </div>
-//   );
-// }
 
 class App extends React.Component {
   constructor() {
@@ -48,8 +41,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
-        <div>
+      <div id="container">
+        <div id='first'>
+          <lable className="heading">Select Postion of Tooltip</lable><br/>
           <select value={this.state.tooltipPostion} onChange={this.handleChange}>
             <option value="top">top</option>
             <option value="right">right</option>
@@ -58,17 +52,13 @@ class App extends React.Component {
           </select>
         </div>
 
-        <br/><br/><br/><br/>
-        {/* main */}
-        <div id='main' onMouseOver={this.onHover} onMouseLeave={this.onLeave}>
+        <div id='second' onMouseOver={this.onHover} onMouseLeave={this.onLeave}>
+        
+            {(this.state.box === "text" && <span className="heading tooltip">Hover over here
             {(this.state.showTooltip && <Tooltip postion={this.state.tooltipPostion}></Tooltip>)}
-            {(this.state.box === "text" && <span>Touch me</span>)}
-            {(this.state.box === "" && <img
-              alt='PIC'
-              src=''
-            />)}
+            </span>)}
         </div>
-      </>
+      </div>
     )
   }
 

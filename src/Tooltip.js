@@ -3,16 +3,16 @@ let Tooltip = (props) => {
     return (
         <>
             {/* top */}
-            {(props.postion === 'top'&&<div>top</div>)}
+            {(props.postion === 'top'&&<span className="top tooltiptext">{props.postion} tooltip</span>)}
 
             {/* right */}
-            {(props.postion === 'right'&& <div>right</div>)}
+            {(props.postion === 'right'&& <span className="right tooltiptext">{props.postion} tooltip</span>)}
 
             {/* bottom */}
-            {(props.postion === 'bottom'&& <div>bottom</div>)}
+            {(props.postion === 'bottom'&& <span className="bottom tooltiptext">{props.postion} tooltip</span>)}
 
              {/* left */}
-            {(props.postion === 'left'&& <div>left</div>)}
+            {(props.postion === 'left'&& <span className="left tooltiptext">{props.postion} tooltip</span>)}
         </>
     )
 }
