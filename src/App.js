@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import Tooltip from './Tooltip';
 // function App() {
 //   return (
 //     <div className="App">
@@ -23,8 +24,6 @@ class App extends React.Component {
     this.setState({
       text: "image",
       showTooltip: true
-    }, () => {
-      console.log(this.state);
     })
   }
 
@@ -58,10 +57,11 @@ class App extends React.Component {
             <option value="bottom">bottom</option>
           </select>
         </div>
+
         <br/><br/><br/><br/>
         {/* main */}
         <div id='main' onMouseOver={this.onHover} onMouseLeave={this.onLeave}>
-            {(this.state.showTooltip && <div>hii</div>)}
+            {(this.state.showTooltip && <Tooltip postion={this.state.tooltipPostion}></Tooltip>)}
             {(this.state.box === "text" && <span>Touch me</span>)}
             {(this.state.box === "" && <img
               alt='PIC'
